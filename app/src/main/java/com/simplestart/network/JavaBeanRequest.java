@@ -15,7 +15,7 @@
  */
 package com.simplestart.network;
 
-import com.taobaodb.andriod_app.MyApplication;
+import com.google.gson.Gson;
 import com.yanzhenjie.nohttp.Headers;
 import com.yanzhenjie.nohttp.RequestMethod;
 import com.yanzhenjie.nohttp.rest.RestRequest;
@@ -51,7 +51,7 @@ public class JavaBeanRequest<T> extends RestRequest<T> {
     public T parseResponse(Headers responseHeaders, byte[] responseBody) throws Exception {
         String response = StringRequest.parseResponseString(responseHeaders, responseBody);
         // 这里如果数据格式错误，或者解析失败，会在失败的回调方法中返回 ParseError 异常。
-        return MyApplication.getGson().fromJson(response, clazz);
+        return new Gson().fromJson(response, clazz);
 //        return JSON.parseObject(response, clazz);
     }
 }

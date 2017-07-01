@@ -19,8 +19,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.view.Window;
 
-import com.taobaodb.andriod_app.R;
-
 
 /**
  * Created in Oct 23, 2015 1:19:04 PM.
@@ -34,7 +32,7 @@ public class WaitDialog extends ProgressDialog {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setCanceledOnTouchOutside(false);
         setProgressStyle(STYLE_SPINNER);
-        setMessage(context.getText(R.string.wait_dialog_title));
+        setMessage("正在加载.....");
     }
 
 }
